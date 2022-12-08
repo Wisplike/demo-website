@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<style>
+  	h1,
+  	p {
+  		text-align: center;
+  	}
+    p {
+  		font-family: Monospace;
+  		font-size:  7em;
+  	}
+  		button {
+  			display: block;
+  			font-size: 1.5em;
+  			padding: 0.5em;
+  			margin: 1em auto;
+  			border-radius: 1em;
+  		}
+  		.cl_add {
+  		  background-color: lightgreen;
+  		}
+  		.cl_sub {
+  		  background-color: red;
+  		  color: white;
+  		}
+  	</style>
+    <script>
+      let vr_countNumber = 0;
+      function fn_addCount() {
+        vr_countNumber++;
+        document.querySelector("#id_number").innerHTML = vr_countNumber;
+        document.querySelector("#id_number").style.color = 'green';
+      }
+      function fn_subCount() {
+        vr_countNumber--;
+        document.querySelector("#id_number").innerHTML = vr_countNumber;
+        document.querySelector("#id_number").style.color = 'red';
+      }
+      function fn_resetCount() {
+        vr_countNumber = 0;
+        document.querySelector("#id_number").innerHTML = vr_countNumber;
+        document.querySelector("#id_number").style.color = 'black';
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Counter Using JavaScript</h1>
+    <p id="id_number">0</p>
+    <button class="cl_add" onclick="fn_addCount()">Add 1</button>
+    <button class="cl_sub" onclick="fn_subCount()">Remove 1</button>
+    <button onclick="fn_resetCount()">Reset</button>
+  </body>
+</html>

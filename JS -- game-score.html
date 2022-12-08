@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body * {
+      text-align: center;
+      margin: 0;
+    }
+    h1 {
+      text-transform: uppercase;
+    }
+    p {
+      font-family: Monospace;
+      font-size: 7.5em;
+      font-weight: bolder;
+      margin: 0.25em auto;
+    }
+    button {
+      font-size: 1.5em;
+      padding: 0.5em;
+      border-radius: 1em;
+      margin: 0.25em;
+    }
+    .cl_add {
+      background-color: lightgreen;
+    }
+    .cl_sub {
+      background-color: red;
+      color: white;
+    }
+    .cl_reset {
+      margin-top: 3em;
+    }
+  </style>
+  <script>
+    let vr_homeScore = 0;
+    let vr_awayScore = 0;
+    function fn_addHome() {
+      vr_homeScore++;
+      document.querySelector("#id_homeScore").innerHTML = vr_homeScore;
+      document.querySelector("#id_homeScore").style.color = 'green';
+    }
+    function fn_subHome() {
+      vr_homeScore--;
+      document.querySelector("#id_homeScore").innerHTML = vr_homeScore;
+      document.querySelector("#id_homeScore").style.color = 'red';
+    }
+    function fn_addAway() {
+      vr_awayScore++;
+      document.querySelector("#id_awayScore").innerHTML = vr_awayScore;
+      document.querySelector("#id_awayScore").style.color = 'green';
+    }
+    function fn_subAway() {
+      vr_awayScore--;
+      document.querySelector("#id_awayScore").innerHTML = vr_awayScore;
+      document.querySelector("#id_awayScore").style.color = 'red';
+    }
+    function fn_resetScore() {
+      vr_homeScore = 0;
+      vr_awayScore = 0;
+      document.querySelector("#id_homeScore").innerHTML = vr_homeScore;
+      document.querySelector("#id_awayScore").innerHTML = vr_awayScore;
+      document.querySelector("#id_homeScore").style.color = 'black';
+      document.querySelector("#id_awayScore").style.color = 'black';
+    }
+  </script>
+</head>
+<body>
+  <h1>Home</h1>
+  <p id="id_homeScore">
+    0
+  </p>
+  <h1>Away</h1>
+  <p id="id_awayScore">
+    0
+  </p>
+  <div>
+    <button class="cl_add" onclick="fn_addHome()">Home +1</button>
+    <button class="cl_sub" onclick="fn_subHome()">Home -1</button>
+    <br />
+  <button class="cl_add" onclick="fn_addAway()">Away +1</button>
+  <button class="cl_sub" onclick="fn_subAway()">Away -1</button>
+  <br />
+<button class="cl_reset" onclick="fn_resetScore()">Reset</button>
+</div>
+</body>
+</html>
